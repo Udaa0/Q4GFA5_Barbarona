@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+<script>
+        window.onload = function() {
+        generateShape();
+    };
+
+    function generateShape() {
+        var input;
+        do {
+            input = prompt("Please enter a number: ");
+            var number = parseInt(input);
+        } while (isNaN(input));
+
+        var output = "Number inputted: " + number + "<br>" + "<br>"; 
+
+        if (number % 2 === 0) {
+            for (var a = number; a >= 1; a--) {
+                for (var b = a; b >= 1; b--) {
+                    output += a + " ";
+                }
+                output += "<br>";
+            }
+        } else {
+            for (var a = number; a >= 1; a--) {
+                for (var b = number; b >= 1; b--) {
+                    output += a + " ";
+                }
+                output += "<br>";
+            }
+        }
+
+        document.getElementById("output").innerHTML = output;
+
+    }
+</script>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+</html>
